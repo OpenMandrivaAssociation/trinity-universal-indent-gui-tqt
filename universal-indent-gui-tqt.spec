@@ -41,11 +41,12 @@ BuildOption:    -DCMAKE_INSTALL_PREFIX=%{tde_prefix}
 BuildOption:    -DINCLUDE_INSTALL_DIR=%{tde_prefix}/include
 BuildOption:    -DPKGCONFIG_INSTALL_DIR=%{tde_prefix}/%{_lib}/trinity/pkgconfig
 BuildOption:    -DSHARE_INSTALL_PREFIX=%{tde_prefix}/share
-BuildOption:    -DBUILD_ALL="ON"
+BuildOption:    -DBUILD_ALL=ON
 BuildOption:    -DWITH_GCC_VISIBILITY=%{!?with_clang:ON}%{?with_clang:OFF}
 
 BuildRequires:	trinity-tdelibs-devel >= %{tde_version}
 BuildRequires:	trinity-tdebase-devel >= %{tde_version}
+BuildRequires:  pkgconfig(tqscintilla)
 BuildRequires:	desktop-file-utils
 
 BuildRequires:	trinity-tde-cmake >= %{tde_version}
